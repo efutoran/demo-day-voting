@@ -1,0 +1,105 @@
+:root {
+  --bg: #f6f6f4;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e4e4e0;
+  --accent: #ff6600;
+  --accent-soft: #fff0e5;
+  --danger: #c62828;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f1f1f1;
+    --muted: #9a9a9a;
+    --line: #2e2e2e;
+    --accent: #ff7a1f;
+    --accent-soft: #3a2414;
+    --danger: #ef5350;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+main { max-width: 640px; margin: 0 auto; padding: 16px 16px 96px; }
+h1 { font-size: 22px; margin: 4px 0 12px; }
+h2 { font-size: 16px; margin: 20px 0 8px; color: var(--muted); font-weight: 600; }
+a { color: var(--accent); }
+button { font: inherit; cursor: pointer; }
+input[type="text"], input[type="password"], input[type="search"] {
+  width: 100%; padding: 12px 14px; font: inherit; font-size: 16px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--card); color: var(--text);
+}
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.error { color: var(--danger); margin: 8px 0; }
+.row { display: flex; align-items: center; gap: 8px; }
+.spacer { flex: 1; }
+
+.btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  border-radius: 10px; padding: 10px 14px;
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn:disabled { opacity: .5; cursor: default; }
+.link-btn { border: 0; background: none; color: var(--accent); padding: 0; }
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px; margin-bottom: 10px;
+}
+
+.chips { display: flex; gap: 8px; overflow-x: auto; padding: 2px 0 10px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; border: 1px solid var(--line); background: var(--card); color: var(--text);
+  border-radius: 999px; padding: 8px 14px; white-space: nowrap;
+}
+.chip.on { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.name-list { list-style: none; padding: 0; margin: 12px 0; }
+.name-list button {
+  width: 100%; text-align: left; padding: 14px; margin-bottom: 8px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--text);
+}
+.name-list button:disabled { opacity: .45; }
+
+.team { display: flex; align-items: center; gap: 12px; }
+.team-name { font-weight: 600; font-size: 17px; }
+.thumb {
+  flex: none; min-width: 84px; height: 52px; border-radius: 12px;
+  border: 2px solid var(--line); background: var(--card); color: var(--text);
+  font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: transform .08s;
+}
+.thumb:active { transform: scale(.95); }
+.thumb.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.voters { margin-top: 8px; font-size: 13px; color: var(--muted); }
+
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; display: flex;
+  background: var(--card); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tabbar button {
+  flex: 1; border: 0; background: none; color: var(--muted); padding: 14px 0; font-weight: 600;
+}
+.tabbar button.on { color: var(--accent); }
+
+.lb-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
+.lb-rank { width: 28px; font-weight: 800; color: var(--muted); text-align: center; }
+.lb-row.top .lb-rank { color: var(--accent); }
+.lb-count { font-weight: 800; font-size: 18px; }
+.bar { height: 4px; border-radius: 2px; background: var(--accent); margin-top: 6px; transition: width .3s; }
+
+.big-count { font-size: min(40vw, 260px); font-weight: 800; line-height: 1; text-align: center; color: var(--accent); }
+.big-name { font-size: 28px; font-weight: 700; text-align: center; margin-top: 24px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
