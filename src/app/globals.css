@@ -80,6 +80,10 @@ input[type="text"], input[type="password"], input[type="search"] {
 }
 .thumb:active { transform: scale(.95); }
 .thumb.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.slot-tag {
+  display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px;
+  background: var(--line); color: var(--muted); font-size: 12px; font-weight: 500; vertical-align: middle;
+}
 .voters { margin-top: 8px; font-size: 13px; color: var(--muted); }
 
 .tabbar {

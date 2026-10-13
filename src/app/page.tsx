@@ -150,6 +150,7 @@ function VoteView(props: {
   if (!slots.length) return <p className="muted">No teams yet. Check back soon.</p>;
 
   const shown = teams.filter((t) => t.slot_id === slotId);
+  const slotLabel = slots.find((s) => s.id === slotId)?.label ?? "";
 
   return (
     <>
@@ -167,7 +168,9 @@ function VoteView(props: {
           <div key={t.id} className="card">
             <div className="team">
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div className="team-name">{t.name}</div>
+                <div className="team-name">
+                  {t.name} <span className="slot-tag">{slotLabel}</span>
+                </div>
                 {voters.length > 0 && (
                   <button className="link-btn small" onClick={() => setOpen(open === t.id ? null : t.id)}>
                     {open === t.id ? "Hide" : "See"} who
